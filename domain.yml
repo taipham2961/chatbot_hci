@@ -1,0 +1,79 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - bot_challenge
+  - inquire_time
+  - request_ticket_plane_form
+  - buy_ticket_plane
+  - inform_ticket_plane
+  - stop
+
+entities:
+  - place
+  - start
+  - arrive
+
+slots:
+  location:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: place
+  start:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: start
+  arrive:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: arrive
+
+forms:
+  simple_ticket_plane_form:
+    required_slots:
+      - start
+      - arrive
+
+responses:
+  utter_greet:
+  - text: "Chào bạn! Bạn muốn tôi giúp gì không?"
+
+  utter_goodbye:
+  - text: "Tạm biệt"
+  - text: "Hẹn gặp lại bạn!"
+
+  utter_iamabot:
+  - text: "Tôi là một chú bot."
+
+  utter_submit:
+  - text: "Tôi sẽ đặt vé máy bay cho bạn!"
+
+  utter_ticket_plane_slots:
+  - text: "Tôi sẽ đặt vé máy bay bay từ {start} đến {arrive} cho bạn!"
+
+  utter_ask_continue:
+  - text: "Bạn có chắc muốn dừng không?"
+
+  utter_ask_start:
+  - text: "Bạn muốn bay từ đâu?"
+
+  utter_ask_arrive:
+  - text: "Bạn muốn bay đến đâu?"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+actions:
+  - action_tell_time
+  - utter_submit
+  - utter_ticket_plane_slots
+  - utter_ask_continue
+  - validate_simple_ticket_plane_form

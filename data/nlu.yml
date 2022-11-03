@@ -1,0 +1,67 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - xin chào
+    - giúp tôi với
+
+- intent: goodbye
+  examples: |
+    - tạm biệt
+    - hẹn gặp lại
+
+- intent: affirm
+  examples: |
+    - đúng rồi
+    - chuẩn
+    - chính xác
+
+- intent: deny
+  examples: |
+    - không
+    - sai rồi
+    - không đúng
+
+- intent: bot_challenge
+  examples: |
+    - bạn là bot?
+    - có phải bạn là con người?
+
+- intent: inquire_time
+  examples: |
+    - mấy giờ rồi?
+    - bây giờ là mấy giờ?
+    - bây giờ là mấy giờ ở [Amsterdam](place)?
+    - bây giờ là mấy giờ ở [London](place)?
+- lookup: place
+  examples: |
+    - Sydney
+    - Paris
+    - London
+    - Tokyo
+    - Berlin
+    - Amsterdam
+    - New York
+    - Hồ Chí Minh
+
+- intent: stop
+  examples: |
+    - dừng lại
+    - tôi muốn dừng lại
+    - ngừng lại
+
+- intent: buy_ticket_plane
+  examples: |
+    - tôi muốn đặt vé máy bay
+    - tôi muốn mua vé máy bay
+    - tôi có thể đặt vé máy bay
+
+- intent: inform_ticket_plane
+  examples: |
+    - tôi muốn bay từ [Phù Cát](start)
+    - tôi muốn bay đến [Côn Đảo](arrive)
+    - [Tân Sơn Nhất](start)
+    - [Đà Nẵng](arrive)
+    - từ [Cà Mau](start)
+    - đến [Buôn Ma Thuột](arrive)

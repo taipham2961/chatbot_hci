@@ -1,0 +1,35 @@
+version: "3.1"
+
+rules:
+
+- rule: Nói lời tạm biệt khi người dùng muốn tạm biệt
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Giới thiệu mình là bot nếu có người hỏi
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Hỏi giờ
+  steps:
+  - intent: inquire_time
+  - action: action_tell_time
+
+- rule: Kích hoạt Form đặt vé máy bay
+  steps:
+  - intent: buy_ticket_plane
+  - action: simple_ticket_plane_form
+  - active_loop: simple_ticket_plane_form
+
+- rule: Gửi Form đặt vé máy bay
+  condition:
+  - active_loop: simple_ticket_plane_form
+  steps:
+  - action: simple_ticket_plane_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+  - action: utter_ticket_plane_slots

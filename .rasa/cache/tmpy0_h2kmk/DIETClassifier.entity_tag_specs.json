@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-arrive",
+      "2": "I-arrive",
+      "3": "L-arrive",
+      "4": "U-arrive",
+      "5": "B-place",
+      "6": "I-place",
+      "7": "L-place",
+      "8": "U-place",
+      "9": "B-start",
+      "10": "I-start",
+      "11": "L-start",
+      "12": "U-start",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-arrive": 1,
+      "I-arrive": 2,
+      "L-arrive": 3,
+      "U-arrive": 4,
+      "B-place": 5,
+      "I-place": 6,
+      "L-place": 7,
+      "U-place": 8,
+      "B-start": 9,
+      "I-start": 10,
+      "L-start": 11,
+      "U-start": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]
